@@ -1,0 +1,8 @@
+#  Ignore large data files
+*.csv
+*.parquet
+*.xlsx
+*.dll
+
+
+C:\Users\USER\Documents\Kay\DataSci\DEGRADATION 2
