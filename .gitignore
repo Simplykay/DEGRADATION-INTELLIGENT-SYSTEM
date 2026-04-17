@@ -1,8 +1,9 @@
 #  Ignore large data files
-*.csv
 *.parquet
 *.xlsx
 *.dll
+*.JSON
+*modeling_table.csv
 
 
 C:\Users\USER\Documents\Kay\DataSci\DEGRADATION 2

@@ -1,29 +1,3 @@
-import streamlit as st
-import subprocess
-import time
-import requests
-
-# 1. Start FastAPI in the background
-@st.cache_resource
-def start_fastapi():
-    # Use uvicorn to run your 'api.py' (assuming app = FastAPI() is inside)
-    process = subprocess.Popen(
-        ["uvicorn", "api:app", "--host", "127.0.0.1", "--port", "8000"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE
-    )
-    time.sleep(2) # Give it a second to wake up
-    return process
-
-fastapi_process = start_fastapi()
-
-# 2. Your Streamlit UI
-st.title("Degradation Intelligent System")
-
-# Now you can talk to your API locally on the server!
-if st.button("Get Prediction from API"):
-    response = requests.get("http://127.0.0.1:8000/predict")
-    st.write(response.json())
 from pathlib import Path
 import json
 import numpy as np
